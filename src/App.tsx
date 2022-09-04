@@ -7,6 +7,7 @@ import {NewComponent} from './site/NewComponent';
 import {Button} from './button/Button';
 import {ButtonUniversal} from './Components/ButtonUniversal';
 import {LearnToUseState} from './useState/useState';
+import {Filter} from './filter/Filter';
 
 export type StudentType = {
     id: number
@@ -47,6 +48,7 @@ function App() {
     }
     return (
         <>
+            <Filter/>
             <h1>{a}</h1>
             <button onClick={onClickHandler}>number</button>
             <Header titleHeader={'New Header'}/>

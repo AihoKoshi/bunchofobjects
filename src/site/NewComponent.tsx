@@ -21,16 +21,16 @@ export type NewComponentType = {
 export const NewComponent = (props: NewComponentType) => {
     return (
         <>
-            {props.topCars.map((object, index)=> {
-                        return (
-                            <table>
-                                <tr key={index}>{object.manufacturer}
-                                    <th key={index}>{object.model}
-                                    </th>
-                                </tr>
-                            </table>
-                        )
-                    })}
+            {props.topCars.map((object, index) => {
+                return (
+                    <table>
+                        <tr key={index}>{object.manufacturer}
+                            <th key={index}>{object.model}
+                            </th>
+                        </tr>
+                    </table>
+                )
+            })}
 
 
             <ul>
