@@ -3,16 +3,28 @@ import './App.css';
 import {Header} from './site/Header';
 import {Footer} from './site/Footer';
 import {Body} from './site/Body';
-import {NewComponent, TopCarsType} from './site/NewComponent';
+import {NewComponent} from './site/NewComponent';
 import {Button} from './button/Button';
 import {ButtonUniversal} from './Components/ButtonUniversal';
+import {LearnToUseState} from './useState/useState';
+
+export type StudentType = {
+    id: number
+    name: string
+    age: number
+}
+
+export type TopCarsType = {
+    manufacturer: string
+    model: string
+}
 
 function App() {
-    // let students: Array<StudentType> = [
-    //     {id: 1, name: 'Igor', age: 18},
-    //     {id: 2, name: 'Gor', age: 19},
-    //     {id: 3, name: 'Or', age: 20},
-    // ]
+    let students: Array<StudentType> = [
+        {id: 1, name: 'Igor', age: 18},
+        {id: 2, name: 'Gor', age: 19},
+        {id: 3, name: 'Or', age: 20},
+    ]
     const topCars: Array<TopCarsType> = [
         {manufacturer: 'BMW', model: 'm5cs'},
         {manufacturer: 'Mercedes', model: 'e63s'},
@@ -28,12 +40,19 @@ function App() {
     const ButtonUniversalFOO3 = () => {
         console.log('I am a stupid button')
     }
+    let a = 1;
+    const onClickHandler = () => {
+        a++;
+        console.log(a)
+    }
     return (
         <>
+            <h1>{a}</h1>
+            <button onClick={onClickHandler}>number</button>
             <Header titleHeader={'New Header'}/>
             <Body titleBody={'New Body'}/>
             <Footer titleFooter={'New Footer'}/>
-            <NewComponent topCars={topCars}/>
+            <NewComponent topCars={topCars} students={students}/>
             <Button/>
             <ButtonUniversal
                 name={'Button Universal 1'}
@@ -45,7 +64,9 @@ function App() {
             />
             <ButtonUniversal
                 name={'Button Universal 3'}
-                callBack={ButtonUniversalFOO3}/>
+                callBack={ButtonUniversalFOO3}
+            />
+            <LearnToUseState/>
         </>
     );
 }

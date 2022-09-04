@@ -1,4 +1,6 @@
 import React from 'react';
+import {StudentType} from '../App';
+import {TopCarsType} from '../App';
 
 // export type StudentType = {
 //     id: number
@@ -6,14 +8,13 @@ import React from 'react';
 //     age: number
 // }
 
-export type TopCarsType = {
-    manufacturer: string
-    model: string
-}
+// export type TopCarsType = {
+//     manufacturer: string
+//     model: string
+// }
 
 export type NewComponentType = {
-    // students: Array<StudentType>
-    // students: StudentType[]
+    students: Array<StudentType>
     topCars: TopCarsType[]
 }
 
@@ -32,17 +33,17 @@ export const NewComponent = (props: NewComponentType) => {
                     })}
 
 
-            {/*<ul>*/}
-            {/*    {props.students.map((objectFromStudentArray, index) => {*/}
-            {/*        return (*/}
-            {/*            <li*/}
-            {/*                key={objectFromStudentArray.id}>*/}
-            {/*                <span>{objectFromStudentArray.name}</span>*/}
-            {/*                <span> age: {objectFromStudentArray.age}</span>*/}
-            {/*            </li>*/}
-            {/*        )*/}
-            {/*    })}*/}
-            {/*</ul>*/}
+            <ul>
+                {props.students.map((objectFromStudentArray, index) => {
+                    return (
+                        <li
+                            key={objectFromStudentArray.id}>
+                            <span>{objectFromStudentArray.name}</span>
+                            <span> age: {objectFromStudentArray.age}</span>
+                        </li>
+                    )
+                })}
+            </ul>
         </>
     )
 }
