@@ -1,19 +1,19 @@
 import React from 'react';
-import {StudentType} from '../App';
-import {TopCarsType} from '../App';
+// import {StudentType} from '../App';
+// import {TopCarsType} from '../App';
 
-// export type StudentType = {
-//     id: number
-//     name: string
-//     age: number
-// }
+export type StudentType = {
+    id: number
+    name: string
+    age: number
+}
 
-// export type TopCarsType = {
-//     manufacturer: string
-//     model: string
-// }
+export type TopCarsType = {
+    manufacturer: string
+    model: string
+}
 
-export type NewComponentType = {
+ type NewComponentType = {
     students: Array<StudentType>
     topCars: TopCarsType[]
 }

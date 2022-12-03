@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import {Header} from './site/Header';
 import {Footer} from './site/Footer';
@@ -20,7 +20,10 @@ export type TopCarsType = {
     model: string
 }
 
+
+
 function App() {
+
     let students: Array<StudentType> = [
         {id: 1, name: 'Igor', age: 18},
         {id: 2, name: 'Gor', age: 19},
@@ -48,6 +51,7 @@ function App() {
     }
     return (
         <>
+
             <Filter/>
             <h1>{a}</h1>
             <button onClick={onClickHandler}>number</button>
